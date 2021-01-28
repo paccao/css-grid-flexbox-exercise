@@ -1,0 +1,117 @@
+.page-logo,
+.a-nav-top {
+  transition: all 0.2s ease 0s;
+}
+
+#top-nav {
+  animation: slideInFromTop 0.8s ease;
+}
+
+#top-nav a:hover,
+.nav-link:hover {
+  color: var(--aquamarine);
+}
+
+#top-title h1 {
+  animation: popOutFromBehind 0.7s ease;
+}
+
+#top-title a {
+  animation: popOutFromBehind 0.7s ease;
+}
+
+#top-title a:hover {
+  color: var(--aquamarine);
+  transition: color 0.2s ease-in-out;
+}
+
+#top-title a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  border-radius: 6px;
+  background: #fff;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+}
+
+#top-title a:hover::before {
+  transform: scale(1);
+}
+
+.skewed {
+  position: absolute;
+  background-color: var(--main-background-overlay);
+  z-index: -190;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.skewed-1 {
+  top: -30rem;
+  height: 57%;
+  transform: skewY(-15deg);
+  box-shadow: 0px 2px 20px #dbdbdb;
+}
+
+.skewed-2 {
+  bottom: 10rem;
+  height: 34%;
+  transform: skewY(7deg);
+  box-shadow: 0px 2px 20px #dbdbdb;
+}
+
+.cta-link:hover::before {
+  content: "";
+  right: 5px;
+  bottom: 1px;
+  left: 5px;
+  height: 1px;
+  border-radius: 999rem;
+  position: absolute;
+  background-color: var(--aquamarine);
+  animation: popOutFromBehind 0.2s ease-out;
+}
+
+.social:hover {
+  color: var(--aquamarine);
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes popOutFromBehind {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .skewed-1 {
+    top: -30rem;
+    height: 50%;
+    transform: skewY(-15deg);
+    box-shadow: 0px 2px 20px #dbdbdb;
+  }
+
+  .skewed-2 {
+    bottom: 6rem;
+    height: 21%;
+    transform: skewY(7deg);
+    box-shadow: 0px 2px 20px #dbdbdb;
+  }
+}

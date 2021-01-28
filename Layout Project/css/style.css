@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+/* Importing google fonts and icons from fontawesome 
+doesn't work on firefox because of CORS, 
+Cross-origin Resource Sharing
+
+This also messes up the socials in the footer since its height is max-content*/
+
+:root {
+  --aquamarine: #00d5a6;
+  --aquamarine-hover: #48daba;
+  --pink: #ff0161;
+  --dark-text: #2b2b2b;
+  --copyright-text: #999ea8;
+  --copyright-background: #f8f9fa;
+  --footer-background: #fbfafc;
+  --footer-social-icons: #b9bdc3;
+  --footer-border: #e7e8ea;
+  --main-headers-and-li: #33325f;
+  --main-hr: #ddd0e8;
+  --main-background-overlay: #fbfafc;
+  --main-background: #fff;
+  --main-darker-skew: #fbfafc;
+  --box-medium: #ebebeb;
+  --box-small: #fbfbfb;
+
+  --box-shadow: 2px 2px 20px #dbdbdb;
+  --box-shadow-dark: 1px 10px 17px #ccc;
+  scroll-behavior: smooth;
+}
+
+/* Generic statements that apply to most of the site _______________________________________________________ */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+h2,
+h3,
+li {
+  color: var(--main-headers-and-li);
+  font-weight: 400;
+}
+
+.dark-text {
+  color: var(--dark-text);
+}
+
+.cta-link {
+  color: var(--pink);
+  z-index: 10;
+  position: relative;
+}
+
+/* Body section _______________________________________________________ */
+
+body {
+  position: relative;
+  z-index: -600;
+}
+
+#wrapper {
+  z-index: -500;
+  position: relative;
+}
+
+#top {
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.349);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content auto;
+  grid-template-areas:
+    "top-nav"
+    "top-title";
+}
+
+/* Background image _______________________________________________________ */
+
+#top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -180;
+  background-image: url("../images/Hero-background_c_nasa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* TOP NAV _______________________________________________________ */
+
+#top-nav > *,
+#nav-links > *,
+#top-title > * {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6vh 14%;
+  position: relative;
+  grid-area: top-nav;
+}
+
+.page-logo {
+  font-size: 1.3rem;
+}
+
+#page-logo-top {
+  margin-right: auto;
+}
+
+.a-nav-top {
+  font-size: 1.1rem;
+  padding: 0px 30px;
+}
+
+/* TOP TITLE _______________________________________________________ */
+
+#top-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
+  grid-area: top-title;
+}
+
+#top-title h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+#top-title a {
+  margin-top: 40px;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: center;
+  min-width: 40px;
+  background-color: var(--aquamarine);
+  position: relative;
+  z-index: 1;
+}
+
+/* MAIN SECTION _______________________________________________________ */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: -200;
+  background: var(--main-background);
+  position: relative;
+}
+
+main * {
+  line-height: 1.45;
+}
+
+main h2,
+main h3,
+.row3-item1 p {
+  margin-bottom: 10px;
+}
+
+main * h2,
+.main-normal-textsize {
+  font-size: 1.4rem;
+}
+
+.main-smaller-textsize {
+  font-size: 1.2rem;
+}
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "row1-a row1-b"
+    "row2-a row2-b"
+    "row3-a row3-b";
+  grid-gap: 7rem;
+  width: 70rem;
+  padding: 5rem 0;
+  margin-bottom: 10rem;
+  transition: all 0.3s ease;
+}
+
+.main-wrapper > * {
+  display: flex;
+}
+
+/* ROW 1 _______________________________________________________ */
+
+.row1-item1,
+.row2-item2,
+.row3-item1 {
+  flex-direction: column;
+}
+
+.row1-item1 {
+  grid-area: row1-a;
+  align-items: flex-start;
+}
+
+#row1-item1-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: max-content;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#row1-item1-cta p {
+  margin-right: 5px;
+}
+
+.fa-arrow-right {
+  transform: scale(0.55);
+}
+
+.row1-item2 {
+  grid-area: row1-b;
+}
+
+.box-shadowing {
+  /* -moz-box-shadow: var(--moz-box-shadow);
+  -webkit-box-shadow: var(--webkit-box-shadow); */
+  box-shadow: var(--box-shadow);
+}
+
+.border-radius {
+  border-radius: 6px;
+}
+
+.box-large {
+  background-color: #fff;
+  padding: 40px 45px;
+  /* -moz-box-shadow: var(--moz-box-shadow-dark);
+  -webkit-box-shadow: var(--webkit-box-shadow-dark); */
+  box-shadow: var(--box-shadow-dark);
+  height: max-content;
+  position: relative;
+  margin-top: 10px;
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-green {
+  position: absolute;
+  top: -15px;
+  background: var(--aquamarine);
+  width: 100px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.box-medium {
+  position: absolute;
+  bottom: -18px;
+  right: 15px;
+  left: 15px;
+  height: 30px;
+  z-index: -80;
+  background: inherit;
+}
+
+.box-small {
+  position: absolute;
+  bottom: -35px;
+  right: 60px;
+  left: 60px;
+  height: 30px;
+  z-index: -90;
+}
+
+/* ROW 2 _______________________________________________________ */
+
+.row2-item1 {
+  grid-area: row2-a;
+}
+
+.row2-item2 {
+  grid-area: row2-b;
+}
+
+.row2-item2,
+.row3-item1 {
+  justify-content: center;
+}
+
+.row2-item2 hr {
+  margin: 1.7rem 0;
+  background-color: var(--main-hr);
+  height: 3px;
+  border: none;
+  border-radius: 999rem;
+}
+
+.row2-item2-inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+#p-anchor {
+  max-width: 80%;
+  margin-top: 8px;
+}
+
+#bar-chart {
+  width: 70px;
+  height: 70px;
+  background-color: var(--aquamarine);
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 14px;
+  align-items: flex-end;
+  margin-right: 15px;
+}
+
+.bar {
+  width: 8px;
+  background-color: #fff;
+}
+
+.bar-1 {
+  height: 60%;
+}
+
+.bar-2 {
+  height: 95%;
+}
+
+.bar-3 {
+  height: 35%;
+}
+
+/* ROW 3 _______________________________________________________ */
+
+.row3-item1 {
+  grid-area: row3-a;
+}
+
+#feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "feature-1 feature-4"
+    "feature-2 feature-5"
+    "feature-3 feature-6";
+  grid-column-gap: 25px;
+  grid-row-gap: 12px;
+  margin-top: 10px;
+}
+
+.checkmark {
+  background-color: var(--aquamarine);
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999rem;
+  margin-right: 9px;
+  color: #fff;
+}
+
+.fa-check {
+  transform: scale(0.9);
+}
+
+.feature {
+  list-style: none;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.f-1 {
+  grid-area: feature-1;
+}
+.f-2 {
+  grid-area: feature-2;
+}
+.f-3 {
+  grid-area: feature-3;
+}
+.f-4 {
+  grid-area: feature-4;
+}
+.f-5 {
+  grid-area: feature-5;
+}
+.f-6 {
+  grid-area: feature-6;
+}
+
+.row3-item2 {
+  grid-area: row3-b;
+}
+
+#ipad {
+  transform: rotate(-75deg);
+  box-shadow: -20px 20px 20px #dbdbdb;
+}
+
+/* FOOTER SECTION _______________________________________________________ */
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact {
+  background: var(--footer-background);
+  height: max-content;
+  padding: 4rem 7rem;
+  border-top: 2px solid var(--footer-border);
+  border-bottom: 2px solid var(--footer-border);
+  box-shadow: 0px -2px 20px #dbdbdb;
+}
+
+#contact,
+#app-store-badge,
+#google-play-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-store-badge {
+  margin-left: auto;
+}
+
+#google-play-badge {
+  margin: 0 auto 0 1.2rem;
+}
+
+#google-play-badge img {
+  width: 135px !important;
+  height: 40px !important;
+}
+
+.socials {
+  background-color: #fff;
+  width: max-content;
+  border: 1px solid var(--footer-border);
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  height: max-content;
+  padding: 0.85rem;
+  color: var(--footer-social-icons);
+}
+
+.fa-facebook-f {
+  border-right: 1px solid var(--footer-border);
+  border-left: 1px solid var(--footer-border);
+}
+
+#copyright {
+  background-color: var(--copyright-background);
+  padding: 1.9rem 7rem;
+  font-size: 0.85rem;
+  color: var(--copyright-text);
+}
+
+/* MEDIA QUERIES _______________________________________________________ */
+
+@media screen and (max-width: 1300px) {
+  .main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "row1-b"
+      "row1-a"
+      "row2-a"
+      "row2-b"
+      "row3-a"
+      "row3-b";
+    grid-gap: 6rem;
+    width: min-content;
+    padding: 7rem;
+    margin-bottom: 2rem;
+  }
+
+  .row3-item2 {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #contact {
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contact > * {
+    margin: 2vh 0;
+  }
+
+  #contact,
+  #app-store-badge,
+  #google-play-badge,
+  #copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app-store-badge {
+    margin-left: 0;
+  }
+
+  #google-play-badge {
+    margin: 0;
+  }
+
+  #copyright {
+    padding: 0.9rem 4rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #top {
+    height: 80vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto max-content;
+    grid-template-areas:
+      "top-title"
+      "top-nav";
+  }
+
+  #top-title {
+    margin-bottom: 0vh;
+  }
+
+  #top-title h1 {
+    font-size: 3rem;
+  }
+
+  #top-nav {
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 8vh;
+  }
+
+  #page-logo-top {
+    margin-right: 0;
+  }
+
+  #nav-links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #page-logo-top,
+  #nav-links > * {
+    font-size: 2rem;
+    margin: 1vh 0;
+  }
+
+  .main-wrapper {
+    padding: 7rem 2rem;
+  }
+
+  #imac {
+    transform: scale(0.85);
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .main-wrapper {
+    transform: scale(0.8);
+    grid-gap: 4rem;
+    padding: 0rem;
+    margin-bottom: 0rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .main-wrapper {
+    transform: scale(0.7);
+  }
+}
